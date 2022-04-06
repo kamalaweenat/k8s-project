@@ -1,0 +1,9 @@
+kind: ConfigMap 
+apiVersion: v1 
+metadata:
+  name: env-configmap 
+  namespace: k8s-proj
+data:
+  # Configuration values can be set as key-value properties
+  mysql_db: "k8s_proj"
+  mysql_user: "root"

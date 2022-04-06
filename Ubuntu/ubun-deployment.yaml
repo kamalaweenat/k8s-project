@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ubunpy
+  namespace: k8s-proj
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ubunpy  
+  template:
+    metadata:
+      labels:
+        app: ubunpy
+    spec:
+      containers:
+      - image: kamalaweenat/ubun_py:2.3
+        name: ubunpy        
+        env:
+        - name: mysql_pwd
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+        envFrom:
+          - configMapRef:
+              name: env-configmap

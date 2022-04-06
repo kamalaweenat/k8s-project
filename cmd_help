@@ -1,0 +1,27 @@
+ # apply bash on pod
+ kubectl exec -it --namespace k8s-proj pod/mysql-b6754d7d9-dqnlv -- /bin/bash
+ 
+ 
+ # get all pods from specifc node
+kubectl get pods --all-namespaces -o wide --field-selector spec.nodeName=kubernetes-worker
+kubectl get pods --all-namespaces -o wide --field-selector spec.nodeName=kubernetes-master
+
+
+ # get all nodes belongs to nodes
+kubectl get pods -A -o wide
+
+
+ # describe
+kubectl describe pod/nodejs-db-6f4df6cb89-btjxt -n k8s-proj
+
+
+ # logs 
+kubectl logs deployment.apps/ubunpy -n k8s-proj
+
+
+ # docker build 
+docker build -t kamalaweenat/ubun_py:1.0 .
+docker push kamalaweenat/ubun_py:1.0
+
+
+https://kubernetes.io/docs/tasks/run-application/run-replicated-stateful-application/
