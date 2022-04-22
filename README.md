@@ -19,7 +19,7 @@ Storing the information of the database in a persistent volume.
 
 First of all clone the project to your local folder by:
 
-`$ clone https://github.com/kamalaweenat/k8s-project.git`
+`$ git clone https://github.com/kamalaweenat/k8s-project.git`
 
 In your terminal run the script file - install_env.sh
 
